@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Repo{% endblock %}
+
+{% block body %}
+    <h1>Repo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ repo.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ repo.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ repo.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ repo.image }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ repo.link }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_repo_index') }}">back to list</a>
+
+    <a href="{{ path('app_repo_edit', {'id': repo.id}) }}">edit</a>
+
+    {{ include('repo/_delete_form.html.twig') }}
+{% endblock %}
